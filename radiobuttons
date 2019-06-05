@@ -1,0 +1,22 @@
+import tkinter as tk
+class mapp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.a=tk.IntVar()
+        self.rad=tk.Radiobutton(self,text="red",variable=self.a,value=1).pack()
+        self.rad=tk.Radiobutton(self,text="blue",variable=self.a,value=2).pack()
+        self.rad=tk.Radiobutton(self,text="yellow",variable=self.a,value=3).pack()
+        self.btn=tk.Button(self,text=" values",command= self.print_).pack()
+    def print_(self):
+        if self.a.get()==1:
+            self.la=tk.Label(self,text=("you chosen red and value is",self.a.get())).pack()
+        elif self.a.get()==2:
+            self.la=tk.Label(self,text=("you chosen blue and value is",self.a.get())).pack()    
+        elif self.a.get()==3:
+            self.la=tk.Label(self,text=("you chosen yellow and value is",self.a.get())).pack()
+        else:
+            
+            self.la=tk.Label(self,text=("you chosen nothing value is",self.a.get())).pack()
+if __name__ == "__main__": 
+    app=mapp()
+    app.mainloop()
