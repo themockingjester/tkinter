@@ -1,0 +1,2 @@
+from tkinter import messagebox
+messagebox.showinfo("hi","you have registered successfully")
