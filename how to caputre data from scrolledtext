@@ -1,0 +1,21 @@
+from tkinter import *
+from tkinter import scrolledtext
+
+master_window = Tk()
+group1 = LabelFrame(master_window, text="Text Box", padx=5, pady=5)
+group1.grid(row=1, column=0, columnspan=3, padx=10, pady=10, sticky=E+W+N+S)
+
+master_window.columnconfigure(0, weight=1)
+master_window.rowconfigure(1, weight=1)
+
+group1.rowconfigure(0, weight=1)
+group1.columnconfigure(0, weight=1)
+def hi():
+    p=txtbox.get(1.0,END)
+    print(p)
+# Create the textbox
+txtbox = scrolledtext.ScrolledText(group1, width=40, height=10)
+txtbox.grid(row=0, column=0,   sticky=E+W+N+S)
+bt=Button(text="enter",command=hi).grid(row=1,column=3)
+
+mainloop()
