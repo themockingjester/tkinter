@@ -1,0 +1,20 @@
+import tkinter as tk
+from tkinter import ttk
+class myfirstapp(tk.Tk):
+    
+    def __init__(self):
+        
+        super().__init__()
+        self.v=tk.StringVar()
+        self.v.trace('w',self.on)
+        self.comboExample = ttk.Combobox(self,textvar=self.v,values=["January", 
+                                    "February",
+                                    "March",
+                                    "April"])
+        self.comboExample.pack()
+        
+    def on(self,*args):
+        print(self.comboExample.get())
+if __name__ == "__main__": 
+    app=myfirstapp()
+    app.mainloop()
