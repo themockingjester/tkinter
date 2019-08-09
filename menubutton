@@ -1,0 +1,29 @@
+from tkinter import *  
+  
+top = Tk()  
+def hi():
+    print("hi")  
+top.geometry("500x250")  
+var=int()  
+CasBtn = Menubutton(top, text='Cascading Menus', underline=0)
+CasBtn.pack(side=LEFT, padx="2m")
+CasBtn.menu = Menu(CasBtn)
+CasBtn.menu.choices = Menu(CasBtn.menu)
+CasBtn.menu.choices.wierdones = Menu(CasBtn.menu.choices)
+CasBtn.menu.choices.wierdones.add_command(label='broker',command=hi)                                           #its a simple button
+CasBtn.menu.choices.wierdones.add_command(label='Surveyor')
+CasBtn.menu.choices.wierdones.add_radiobutton(label='Ssfd',command=hi)                                         #its a radiobutton
+CasBtn.menu.choices.wierdones.add_checkbutton(label='checkbox',command=hi)                                     #its a checkbutton
+CasBtn.menu.choices.add_command(label='Leg')
+CasBtn.menu.choices.add_command(label='Hihase')
+CasBtn.menu.choices.add_command(label='Crab')
+
+
+CasBtn.menu.choices.add_command(label='Goldfish')
+CasBtn.menu.choices.add_cascade(label='Is it a...',
+menu=CasBtn.menu.choices.wierdones)
+CasBtn.menu.add_cascade(label='Scipts', menu=CasBtn.menu.choices)
+CasBtn['menu'] = CasBtn.menu
+
+
+top.mainloop()
