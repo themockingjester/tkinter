@@ -1,0 +1,13 @@
+import tkinter as tk
+class mapp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+         #self.logo=tk.PhotoImage(file='fg.png')
+
+        self.logo=tk.PhotoImage(file='t.png')
+        label = tk.Label(self, image=self.logo)
+        label.place(x=0, y=0, relwidth=1, relheight=1)
+        
+if __name__ == "__main__": 
+    app=mapp()
+    app.mainloop()
