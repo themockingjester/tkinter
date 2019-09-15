@@ -1,0 +1,22 @@
+
+import tkinter as tk
+import time
+root = tk.Tk()
+canvas = tk.Canvas(root, width=600, height=600)
+
+canvas.pack()
+
+obj1 = canvas.create_oval(120, 360, 220, 460, outline='white', fill='green')
+
+x=0
+for i in range(60):
+    
+    time.sleep(.95)
+    if i%2==0:
+        
+        canvas.coords(obj1,120,360,230,470)           #main line of code
+    else:
+        canvas.coords(obj1,120, 360, 250, 490)
+    #canvas.move(obj1, y, x)
+    canvas.update()
+root.mainloop()
