@@ -1,0 +1,1 @@
+root.wm_attributes('-transparentcolor', root['bg'])
